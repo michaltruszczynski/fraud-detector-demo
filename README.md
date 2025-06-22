@@ -14,7 +14,7 @@ Ze względu na wielkość pliku, plik z danymi **nie jest dołączony** do repoz
 3. Umieść go w katalogu projektu:
 
 ```
-fraud-demo_ver_1/data/creditcard.csv
+data/creditcard.csv
 ```
 
 ---
