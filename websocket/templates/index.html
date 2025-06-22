@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ostrzeżenia. Podejrzane transakcje.</title>
+  <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+</head>
+<body>
+  <h1>!!! Lista podejrzanych transakcji</h1>
+  <ul id="alerts"></ul>
+
+  <script>
+    const socket = io();
+    const alerts = document.getElementById("alerts");
+
+    socket.on("fraud_alert", data => {
+      const li = document.createElement("li");
+      li.textContent = `🚨 Wykryto podejrzaną transakcję! Kwota: ${data.Amount}, Godzina wykrycia UTC: ${data.DetectedAt}`;
+      alerts.prepend(li);
+    });
+  </script>
+</body>
+</html>
